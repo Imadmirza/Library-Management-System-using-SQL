@@ -9,12 +9,12 @@ The **Library Management System** is a structured database project built using S
 
 ## 🎯 Objectives  
 
-✔ **Database Design & Implementation**: Create a relational database with optimized structure.  
-✔ **CRUD Operations**: Manage books, members, and employees with Insert, Update, Delete, and Select queries.  
-✔ **CTAS (Create Table As Select)**: Generate new tables dynamically from existing data for reporting and analysis.  
-✔ **Advanced SQL Queries**: Perform data analytics such as overdue books, fine calculations, and frequent book issuers.  
-✔ **Data Import & Export**: Support importing books and members' records from external Excel files.  
-✔ **Performance Optimization**: Ensure efficient indexing and query performance.  
+📖 **Database Design & Implementation**: Create a relational database with an optimized structure.  
+🛠 **CRUD Operations**: Manage books, members, and employees with Insert, Update, Delete, and Select queries.  
+📊 **CTAS (Create Table As Select)**: Generate new tables dynamically from existing data for reporting and analysis.  
+🔍 **Advanced SQL Queries**: Perform data analytics such as overdue books, fine calculations, and frequent book issuers.  
+📥 **Data Import & Export**: Support importing books and members' records from external Excel files.  
+⚡ **Performance Optimization**: Ensure efficient indexing and query execution for better performance.  
 
 ---
 
@@ -22,41 +22,42 @@ The **Library Management System** is a structured database project built using S
 
 The **Library Management System** consists of the following tables:  
 
-### 📌 **1. Books Table (`books`)**  
+### 📚 **1. Books Table (`books`)**  
 Stores information about the books available in the library.  
-- `isbn` (Primary Key)  
-- `book_title`  
-- `author`  
-- `genre`  
-- `status` (Available, Issued, Damaged, Lost)  
+- 🔑 `isbn` (Primary Key)  
+- 📖 `book_title`  
+- ✍️ `author`  
+- 🎭 `genre`  
+- 🔄 `status` (Available, Issued, Damaged, Lost)  
 
-### 📌 **2. Members Table (`members`)**  
+### 👤 **2. Members Table (`members`)**  
 Stores details about the library members.  
-- `member_id` (Primary Key)  
-- `member_name`  
-- `email`  
-- `phone_number`  
-- `membership_date`  
+- 🔑 `member_id` (Primary Key)  
+- 🏷️ `member_name`  
+- 📧 `email`  
+- 📞 `phone_number`  
+- 📅 `membership_date`  
 
-### 📌 **3. Issued Books (`issued_status`)**  
+### 📑 **3. Issued Books (`issued_status`)**  
 Records books issued to members.  
-- `issued_id` (Primary Key)  
-- `issued_member_id` (Foreign Key → `members.member_id`)  
-- `issued_book_isbn` (Foreign Key → `books.isbn`)  
-- `issued_date`  
-- `due_date`  
+- 🔑 `issued_id` (Primary Key)  
+- 🆔 `issued_member_id` (Foreign Key → `members.member_id`)  
+- 📚 `issued_book_isbn` (Foreign Key → `books.isbn`)  
+- 🗓️ `issued_date`  
+- ⏳ `due_date`  
 
-### 📌 **4. Return Status (`return_status`)**  
+### 🔄 **4. Return Status (`return_status`)**  
 Tracks the return status of issued books.  
-- `return_id` (Primary Key)  
-- `issued_id` (Foreign Key → `issued_status.issued_id`)  
-- `return_date`  
+- 🔑 `return_id` (Primary Key)  
+- 📑 `issued_id` (Foreign Key → `issued_status.issued_id`)  
+- 📆 `return_date`  
 
-### 📌 **5. Overdue Fines (`overdue_fines`)**  
+### ⚠️ **5. Overdue Fines (`overdue_fines`)**  
 Calculates fines for books returned late.  
-- `member_id` (Foreign Key → `members.member_id`)  
-- `overdue_books` (Total overdue books)  
-- `total_fines` (Fine calculated at **$0.50 per day overdue**)  
+- 🆔 `member_id` (Foreign Key → `members.member_id`)  
+- ⏳ `overdue_books` (Total overdue books)  
+- 💲 `total_fines` (Fine calculated at **$0.50 per day overdue**)  
+ 
 
 ---
 
